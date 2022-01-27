@@ -10,13 +10,14 @@
       padding: 0;
       margin: 0;
     }
-    h2 , p{
+    h1, h2 , p{
       line-height: 1;
     }
     body {
       box-sizing: border-box;
       overflow-x: hidden;
     }
+    /* 플랙스 클래스 활용 */
     .dispay_flex {
       display: flex;
     }
@@ -57,12 +58,10 @@
     /* 첫번째 컨텐츠영역 */
     #title_wrap {
       /* border: 1px solid red; */
-      /* 1번박스와 별박스 사이 간격주기 */
-      /* display: flex;
-      justify-content: space-between; */
+      /* flex */
     }
     #title_wrap > div {
-      width: 10vw;
+      /* width: 10vw; */
       height: 10vh;
       /* border: 1px solid red; */
       background-color: rgba(255, 255, 255, .5);
@@ -70,7 +69,7 @@
       line-height: 10vh;
     }
     #title_wrap div:nth-child(1) {
-      width: 20vw;
+      /* width: 20vw; */
     }
     #text {
       margin-top: 5vh;
@@ -88,10 +87,6 @@
       right: 3vw;
       transform: translateY(-50%);
       /* 버튼 flex */
-      /* display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      align-items: center; */
     }
     #btn_wrap div {
       width: 2rem;
@@ -103,9 +98,7 @@
 
     /* 두번째 컨텐츠영역 */
     #container_2 > div {
-      /* bar 와 wrap flex */
-      /* display: flex;
-      justify-content: space-between; */
+      /* flex */
     }
     #bar {
       width: .5rem;
@@ -117,9 +110,6 @@
       height: 100%;
       /* border: 1px solid red; */
       /* flex */
-      /* display: flex;
-      flex-direction: column;
-      justify-content: space-between; */
     }
     #wrap > div {
       width: 100%;
@@ -180,7 +170,12 @@
   <script>
     //title_wrap 안의 div 1번박스와 별박스
     // 1번박스를 별박스의 2배로 만들어줘
-
+    const titleWrap = document.querySelector('#title_wrap');
+    console.log(titleWrap.children);
+    let value = 10
+    titleWrap.children[1].style.width = value + 'vw';
+    titleWrap.children[0].style.width = value* 2 +'vw';
+    console.log(titleWrap.children[1].style.width);
   </script>
 </body>
 </html>
